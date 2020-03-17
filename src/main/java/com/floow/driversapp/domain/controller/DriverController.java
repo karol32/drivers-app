@@ -15,7 +15,6 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/driver")
 @Api(tags = "Drivers API", produces = "application/json", description = "Available API endpoints")
 class DriverController {
 
@@ -29,7 +28,7 @@ class DriverController {
     }
 
 
-    @GetMapping
+    @GetMapping("/drivers")
     @ApiOperation(value = "An endpoint which returns a list of all existing drivers in JSON format", response = Driver.class, produces = "application/json")
     public List<DriverDto> getAll(){
         return driverServices.getAll()
@@ -38,7 +37,7 @@ class DriverController {
                 .collect(Collectors.toList());
     }
 
-    @GetMapping("/byDate")
+    @GetMapping("/drivers/byDate")
     @ApiOperation(value = "An endpoint which returns a list of all drivers created after the specified date in JSON format", response = Driver.class, produces = "application/json")
     @ApiParam(value = "Created after the specified date.",
             required = true,
@@ -51,7 +50,7 @@ class DriverController {
                 .collect(Collectors.toList());
     }
 
-    @PostMapping
+    @PostMapping("/driver/create")
     @ApiOperation(value = "An endpoint to allow new drivers to be created and stored.", response = Driver.class, produces = "application/json")
     public DriverDto post(@Valid @RequestBody DriverDto dto){
         return Optional.of(

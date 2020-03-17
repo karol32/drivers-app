@@ -86,7 +86,7 @@ class DriverControllerTest {
     void shouldReturnEmptyArrayWitHttpStatus200() throws Exception {
 
         //given
-        RequestBuilder request = MockMvcRequestBuilders.get("/driver")
+        RequestBuilder request = MockMvcRequestBuilders.get("/drivers")
                 .contentType(MediaType.APPLICATION_JSON);
 
         //when
@@ -103,7 +103,7 @@ class DriverControllerTest {
     @Test
     void shouldReturnArrayWitHttpStatus200() throws Exception {
         //given
-        RequestBuilder request = MockMvcRequestBuilders.get("/driver")
+        RequestBuilder request = MockMvcRequestBuilders.get("/drivers")
                 .contentType(MediaType.APPLICATION_JSON);
 
         List<DriverDto> allDrivers = singletonList(SOME_DRIVER_DATA_DTO);
@@ -124,7 +124,7 @@ class DriverControllerTest {
     void shouldReturnDriverByDateWitHttpStatus200() throws Exception {
 
         //given
-        RequestBuilder request = MockMvcRequestBuilders.get("/driver/byDate")
+        RequestBuilder request = MockMvcRequestBuilders.get("/drivers/byDate")
                 .contentType(MediaType.APPLICATION_JSON)
                 .param("date", "2020-01-01");
         List<DriverDto> allDrivers = singletonList(SOME_DRIVER_DATA_DTO);
@@ -151,7 +151,7 @@ class DriverControllerTest {
         String json = "{\"date_of_birth\": \"2009-01-17\",  \"firstname\": \"Karol\", \"lastname\": \"Cecot\"}";
 
 
-        RequestBuilder request = MockMvcRequestBuilders.post("/driver")
+        RequestBuilder request = MockMvcRequestBuilders.post("/driver/create")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(json);
 

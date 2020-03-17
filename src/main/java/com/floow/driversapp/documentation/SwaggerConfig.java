@@ -30,7 +30,8 @@ class SwaggerConfig {
                 .apis(RequestHandlerSelectors.basePackage("com.floow.driversapp"))
                 .paths(or(
                         regex("/driver/.*"),
-                        regex("/driver"),
+                        regex("/drivers"),
+                        regex("/drivers/.*"),
                         regex("/health.*"))
                 ).build()
                 .apiInfo(new ApiInfoBuilder()
