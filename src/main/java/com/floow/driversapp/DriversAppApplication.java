@@ -8,6 +8,12 @@ public class DriversAppApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DriversAppApplication.class, args);
+
+		System.out.println("FREE TEXT");
+
+		System.out.println("FREE 1");
+
+		System.out.println("FREE 2");
 	}
 
 }
