@@ -13,9 +13,6 @@ public class DriversAppApplication {
 
 		System.out.println("FREE 1");
 
-		System.out.println("FREE 2");
-
-
 		//TODO DELETE THIS
 		System.out.println("FREE 3");
 
